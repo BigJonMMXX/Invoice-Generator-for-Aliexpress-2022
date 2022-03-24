@@ -1,0 +1,61 @@
+{
+  "manifest_version": 2,
+  "name": "Invoice Generator for Aliexpress",
+  "version": "2022.03.23",
+  
+  "description": "Generate PDF invoices for Aliexpress purchases",
+  
+  "icons": {
+    "19": "icons/morph-019.png",
+    "38": "icons/morph-038.png",
+    "48": "icons/morph-048.png",
+    "96": "icons/morph-096.png",
+    "128": "icons/morph-128.png",
+    "196": "icons/morph-196.png"
+  },
+  
+  "background": {
+    "scripts": ["browser-polyfill.js", "mybackground.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.aliexpress.com/*"],
+      "js": ["borderify.js", "browser-polyfill.js", "pdfkit.standalone.js", "mycontent.js"]
+    }],
+
+  "options_ui": {
+    "page": "pages/options.html",
+    "browser_style": true
+  },
+
+  "page_action": {
+    "browser_style": true,
+    "default_icon": {
+      "19": "icons/morph-019.png",
+      "38": "icons/morph-038.png"
+    },
+    "default_title": "Generate PDF Invoice",
+    "show_matches": ["*://*.aliexpress.com/*"]
+  },
+
+  "permissions": [
+    "storage",
+    "downloads"
+  ],
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{daf44bf7-a45e-4450-979c-91cf07434c3d}",
+      "strict_min_version": "42.0"
+  }},
+
+  "web_accessible_resources": [
+    "aliexpress.png",
+    "fonts/DroidSansFallback.ttf",
+    "fonts/DroidSans-Bold.ttf",
+    "icons/morph-128.png"
+  ],
+
+  "default_locale": "en"
+  
+}  
