@@ -1,4 +1,4 @@
-# AliExpress Invoice Generator 2021
+# Invoice Generator for Aliexpress 2022
 
 This is a browser extension for generating PDF invoices on [AliExpress] website.
 
